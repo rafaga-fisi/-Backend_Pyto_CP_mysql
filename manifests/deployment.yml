@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: rafagaimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rafagaimage
+  template:
+    metadata:
+      labels:
+        app: rafagaimage 
+    spec:
+      containers:
+        - name: rafagaimage 
+          image: contenedorrafaga3.azurecr.io/rafagaimage
+          ports:
+          - containerPort: 4000
